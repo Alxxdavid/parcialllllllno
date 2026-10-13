@@ -1,0 +1,96 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #05050a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.banner-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 400px;
+    background: linear-gradient(135deg, #0f0c20, #060614);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    perspective: 1000px; 
+}
+
+.banner-bg-3d {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        linear-gradient(rgba(0, 242, 254, 0.1) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.1) 2px, transparent 2px);
+    background-size: 40px 40px;
+
+    transform: rotateX(60deg) translateZ(-100px);
+    animation: moveGrid 20s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes moveGrid {
+    0% {
+        transform: rotateX(60deg) translateZ(-100px) translateY(0);
+    }
+    100% {
+        transform: rotateX(60deg) translateZ(-100px) translateY(40px);
+    }
+}
+
+
+.banner-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    transform: translateZ(50px); 
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    color: #a0a0c0;
+    margin-bottom: 30px;
+}
+.btn-action {
+    display: inline-block;
+    padding: 12px 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-action:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(43, 40, 46, 0.6);
+}
+
